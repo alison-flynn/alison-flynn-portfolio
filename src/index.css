@@ -1,0 +1,394 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;700&family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;700&family=Spectral:wght@400;600&family=Raleway:wght@300;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---------------------------------- *\
+ * BASE
+\* ---------------------------------- */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-zinc-900 text-zinc-50;
+}
+
+/* ---------------------------------- *\
+ * TYPOGRAPHY
+\* ---------------------------------- */
+
+/* Gradients for special headlines */
+.headline-1,
+.headline-2 {
+  @apply max-w-max;
+  background: -webkit-linear-gradient(0deg, #fafafa, #a1a1aa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Headline sizes are reduced for a more compact look */
+.headline-1 {
+  @apply text-4xl leading-tight font-semibold lg:text-5xl lg:leading-tight;
+}
+
+.headline-2 {
+  @apply text-3xl lg:text-4xl lg:leading-tight font-semibold;
+}
+
+.title-1 {
+  @apply text-lg font-normal;
+}
+
+/* ---------------------------------- *\
+ * UTILITIES
+\* ---------------------------------- */
+
+.material-symbols-rounded {
+  @apply w-[1em] h-[1em] overflow-hidden;
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+}
+
+/* Use a slightly narrower container */
+.container {
+  @apply px-4 mx-auto lg:px-6 xl:max-w-5xl;
+}
+
+.img-box {
+  @apply bg-zinc-700 overflow-hidden;
+}
+
+.img-cover {
+  @apply w-full h-full object-cover;
+}
+
+/* Sections: reduced padding for less scroll length */
+.section {
+  @apply pt-12 pb-12;
+}
+
+/* Reveal utility for animations */
+.reveal-up {
+  @apply translate-y-20 opacity-0;
+}
+
+/* ---------------------------------- *\
+ * COMPONENTS
+\* ---------------------------------- */
+
+/* Menu Button */
+.menu-btn {
+  @apply w-10 h-10 grid place-items-center bg-zinc-50/10 rounded-xl ring-inset ring-1 ring-zinc-50/[0.02] backdrop-blur-2xl hover:bg-zinc-50/15 transition-transform active:scale-95;
+}
+
+/* Navbar */
+.navbar {
+  @apply absolute top-full mt-2 right-0 min-w-40 p-2 bg-zinc-50/10 rounded-2xl ring-inset ring-1 ring-zinc-50/5 scale-90 isolate blur-sm opacity-0 invisible transition-[opacity,transform,filter] md:static md:flex md:items-center md:mt-0 md:opacity-100 md:blur-0 md:visible md:scale-100 backdrop-blur-2xl;
+}
+
+.navbar.active {
+  @apply opacity-100 scale-100 blur-0 visible;
+}
+
+.nav-link {
+  @apply grid items-center h-9 px-4 text-sm font-medium tracking-wide text-zinc-50/50 hover:text-zinc-50 transition-colors;
+}
+
+.nav-link.active {
+  @apply text-zinc-900 duration-500;
+}
+
+.navbar .active-box {
+  @apply absolute bg-zinc-50 rounded-lg -z-10 transition-all duration-500;
+}
+
+/* Button Styles */
+.btn {
+  @apply max-w-max h-9 flex items-center gap-2 px-4 rounded-xl font-medium text-sm ring-1 ring-zinc-50/5 ring-inset transition-colors;
+}
+
+.btn-secondary {
+  @apply bg-zinc-50 text-zinc-900 active:bg-zinc-50/80;
+}
+
+.btn .material-symbols-rounded {
+  @apply text-[18px];
+}
+
+.btn:has(.material-symbols-rounded) {
+  @apply pr-3;
+}
+
+.btn-primary {
+  @apply h-10 bg-purple-400 text-zinc-950 hover:bg-purple-300 active:bg-purple-400;
+}
+
+.btn-outline {
+  @apply h-10 bg-zinc-800 hover:bg-zinc-700 active:bg-zinc-800;
+}
+
+/* Text Field */
+.label {
+  @apply block text-zinc-200 text-sm font-normal mb-2;
+}
+
+.text-field {
+  @apply block outline-none w-full px-3 py-2 text-sm bg-zinc-800 rounded-xl ring-1 ring-inset ring-transparent transition-shadow hover:ring-zinc-50/5 focus:ring-purple-400 focus:ring-2;
+}
+
+.text-field::placeholder {
+  @apply text-zinc-400;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.tab {
+  background-color: #333;
+  color: #ccc;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.tab:hover {
+  background-color: #444;
+}
+
+.tab.active {
+  background-color: #4caf50;
+  color: white;
+}
+
+.tab-content {
+  background-color: #222;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+/* Case Study Sections - Improved Vertical Spacing */
+.case-study-content {
+  @apply pt-12 pb-12 lg:pt-20 lg:pb-20 mb-16 lg:mb-24;
+}
+
+
+
+.return-btn {
+  @apply bg-zinc-800 text-white px-6 py-2 rounded-lg font-medium hover:bg-zinc-700 transition-colors ml-auto;
+}
+
+/* Case Study Navbar Links */
+.case-nav-link {
+  @apply grid items-center h-9 px-4 text-sm font-medium tracking-wide text-zinc-50/50 hover:text-zinc-50 transition-colors;
+}
+
+.case-nav-link.active {
+  @apply text-zinc-900 duration-500;
+}
+
+/* Custom Headline for smaller sections */
+.headline-2 {
+  @apply text-3xl font-bold;
+}
+
+/* 🌸 Soft Elegant Gradient - Slightly Darker Yet Pastel */
+/* 🌸 Soft Elegant Gradient - Slightly Darker Yet Pastel */
+/* ✅ Apply Gradient Everywhere EXCEPT Header, Navbar & Hero Images */
+.bg-purple-400:not(header):not(.navbar-container):not(.hero-image):not(.case-study-hero-image),
+.bg-purple-500:not(header):not(.navbar-container):not(.hero-image):not(.case-study-hero-image),
+.bg-purple-600:not(header):not(.navbar-container):not(.hero-image):not(.case-study-hero-image),
+.bg-purple-700:not(header):not(.navbar-container):not(.hero-image):not(.case-study-hero-image),
+.bg-purple-800:not(header):not(.navbar-container):not(.hero-image):not(.case-study-hero-image),
+.bg-indigo-400:not(header):not(.navbar-container):not(.hero-image):not(.case-study-hero-image),
+.bg-indigo-500:not(header):not(.navbar-container):not(.hero-image):not(.case-study-hero-image),
+.bg-indigo-600:not(header):not(.navbar-container):not(.hero-image):not(.case-study-hero-image),
+.bg-indigo-700:not(header):not(.navbar-container):not(.hero-image):not(.case-study-hero-image),
+.bg-indigo-800:not(header):not(.navbar-container):not(.hero-image):not(.case-study-hero-image),
+.bg-gradient-to-r:not(header):not(.navbar-container):not(.hero-image):not(.case-study-hero-image),
+.bg-gradient-to-l:not(header):not(.navbar-container):not(.hero-image):not(.case-study-hero-image),
+.bg-gradient-to-t:not(header):not(.navbar-container):not(.hero-image):not(.case-study-hero-image),
+.bg-gradient-to-b:not(header):not(.navbar-container):not(.hero-image):not(.case-study-hero-image) {
+  background: linear-gradient(to right, #D6B5FF, #B790E3) !important;
+}
+
+/* ✅ Keep Header Completely Transparent */
+header {
+  background: transparent !important;
+  box-shadow: none !important;
+  border-bottom: none !important;
+}
+
+/* ✅ Frosted Glass Navbar (Inside the Header) */
+.navbar-container {
+  background: rgba(24, 24, 27, 0.7) !important; /* Semi-transparent dark */
+  backdrop-filter: blur(12px) !important; /* Frosted Glass */
+  -webkit-backdrop-filter: blur(12px) !important; /* Safari Support */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important; /* Soft Shadow */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important; /* Thin Border */
+  padding: 0.75rem 1.5rem;
+  border-radius: 12px; /* Slightly rounded for sleekness */
+  transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* ✅ Navbar Hover & Active States */
+.navbar a {
+  color: rgba(255, 255, 255, 0.7) !important; /* Default slightly faded */
+  transition: color 0.3s ease, background 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #ffffff !important;
+}
+
+.navbar a.active {
+  color: #18181B !important;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+}
+
+/* ✅ Buttons & Interactive Elements */
+.btn {
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+  background: linear-gradient(to right, #E2C4FF, #C09CEC) !important;
+}
+
+.btn:active {
+  transform: scale(0.95);
+}
+
+/* ✅ GSAP Animation for Button Hover */
+.btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::after {
+  content: "";
+  position: absolute;
+  left: -100%;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  transition: left 0.3s ease;
+}
+
+.btn:hover::after {
+  left: 100%;
+}
+
+/* ✅ Focus Ring for Inputs, Buttons, and Active Elements */
+.focus\:ring-purple-400:focus,
+.focus\:ring-purple-500:focus,
+.focus\:ring-purple-600:focus,
+.focus\:ring-purple-700:focus,
+.focus\:ring-purple-800:focus {
+  box-shadow: 0 0 12px rgba(200, 162, 248, 0.5) !important;
+}
+
+/* 🚀 Ensure Hero & Case Study Hero Images Have a Gradient Behind Them */
+.hero-image-container, 
+.case-study-hero-image-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border-radius: 30px;
+  overflow: hidden;
+  background: linear-gradient(145deg, #2E2A47, #4A3E78, #6A55A3, #B790E3) !important;
+  /* 🔹 Deep desaturated blue → soft lavender → pastel purple */
+  padding: 20px; /* Adds breathing space */
+}
+
+/* 🌸 **Ensure the Gradient Stays Behind the Image** */
+.hero-image-container::before, 
+.case-study-hero-image-container::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50%; /* Gradient fades from bottom up */
+  background: linear-gradient(to top, rgba(214, 181, 255, 0.6), rgba(183, 144, 227, 0.3), transparent);
+  z-index: -1; /* Behind the image */
+}
+
+/* 🌸 Ensure Image is in Front */
+.hero-image-container img, 
+.case-study-hero-image-container img {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  background: none !important; /* Prevent unwanted background overrides */
+  border-radius: 20px; /* Soft edges */
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3); /* Adds depth */
+}
+
+/* ✅ Exclude Hero Images from Global Purple Styling */
+.bg-purple-400:not(.hero-image-container):not(.case-study-hero-image-container),
+.bg-purple-500:not(.hero-image-container):not(.case-study-hero-image-container),
+.bg-purple-600:not(.hero-image-container):not(.case-study-hero-image-container),
+.bg-purple-700:not(.hero-image-container):not(.case-study-hero-image-container),
+.bg-purple-800:not(.hero-image-container):not(.case-study-hero-image-container) {
+  background: linear-gradient(to right, #D6B5FF, #B790E3) !important;
+}
+
+
+
+/* ✅ Global Font Settings */
+html {
+  font-family: 'Inter', sans-serif;
+  background-color: #0a0a0a;
+  color: #ffffff;
+}
+
+h1, h2, h3 {
+  font-family: 'Bodoni Moda', serif;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.section-title {
+  font-family: 'Spectral', serif;
+  font-size: 3rem;
+  font-style: italic;
+  letter-spacing: 0.1em;
+}
+
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 4rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.btn {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+}
+
+/* ✅ Branding & Signature */
+.branding {
+  font-family: 'Aghsing', cursive;
+  font-size: 2rem;
+  color: #b788f2;
+  opacity: 0.8;
+}
