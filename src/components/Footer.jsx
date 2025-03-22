@@ -16,9 +16,9 @@ const sitemap = [
 ];
 
 const caseStudies = [
-  { label: "Airia Airline Website", href: "/casestudy1" },
-  { label: "Streamlining Engineering", href: "/casestudy2" },
-  { label: "Career Coach", href: "/casestudy3" },
+  { label: "Airia Airline Website", href: "/airlinecasestudy" },
+  { label: "Streamlining Engineering", href: "/engineeringcasestudy" },
+  { label: "Career Coach", href: "/careercoachcasestudy" },
 ];
 
 const Footer = () => {
