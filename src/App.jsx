@@ -41,20 +41,22 @@ const App = () => {
         {/* Always visible progress bar */}
         <ProgressBar />
 
-        {/* Cookie Consent Banner */}
+        {/* Cookie Consent Banner with glassmorphism lilac styling */}
         <CookieConsent
           location="bottom"
           buttonText="Accept"
           declineButtonText="Decline"
           cookieName="portfolioCookieConsent"
           style={{
-            background: "#2B373B",
+            background: "rgba(217, 180, 255, 0.8)", // translucent lilac
             fontSize: "14px",
             fontFamily: "Inter, sans-serif",
             padding: "16px",
+            backdropFilter: "blur(10px)",
+            color: "#333333", // dark grey text
           }}
           buttonStyle={{
-            color: "#2B373B",
+            color: "#333333",
             fontSize: "14px",
             borderRadius: "4px",
             background: "#f7f7f7",
@@ -73,7 +75,7 @@ const App = () => {
           We use cookies to enhance your experience. By clicking “Accept”, you consent to our use of cookies.{" "}
           <a
             href="/privacy-policy"
-            style={{ color: "#f7f7f7", textDecoration: "underline" }}
+            style={{ color: "#333333", textDecoration: "underline" }}
           >
             Learn More
           </a>

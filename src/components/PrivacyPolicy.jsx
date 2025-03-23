@@ -4,22 +4,22 @@ import { Link } from "react-router-dom";
 
 const PrivacyPolicy = () => {
   return (
-    <div className="case-study-section max-w-4xl mx-auto px-6 py-10 text-white leading-relaxed">
-      {/* Header with Logo and Title */}
+    <div className="case-study-section max-w-4xl mx-auto px-6 py-10 text-gray-800 leading-relaxed bg-white/70 backdrop-blur-md rounded-2xl shadow-lg">
+      {/* Header with Logo */}
       <header className="flex items-center mb-8">
         <img
           src="/images/icon-logo-.svg"
           alt="Logo"
           className="w-12 h-12 mr-4"
         />
-        <h1 className="headline-2 font-bold text-3xl md:text-4xl tracking-wide">
+        <h1 className="headline-2 font-heading font-bold text-4xl md:text-5xl tracking-wider text-gray-800">
           Privacy Policy
         </h1>
       </header>
-      <p className="text-base mb-8">Effective Date: January 1, 2025</p>
+      <p className="text-lg mb-8">Effective Date: January 1, 2025</p>
 
       <section className="mb-8">
-        <h2 className="headline-2 font-semibold text-2xl mb-2">
+        <h2 className="headline-2 font-heading font-semibold text-3xl mb-2 text-gray-800">
           1. Introduction
         </h2>
         <p className="text-base mb-2">
@@ -46,7 +46,7 @@ const PrivacyPolicy = () => {
       </section>
 
       <section className="mb-8">
-        <h2 className="headline-2 font-semibold text-2xl mb-2">
+        <h2 className="headline-2 font-heading font-semibold text-3xl mb-2 text-gray-800">
           2. Data Controller
         </h2>
         <p className="text-base">
@@ -57,7 +57,7 @@ const PrivacyPolicy = () => {
       </section>
 
       <section className="mb-8">
-        <h2 className="headline-2 font-semibold text-2xl mb-2">
+        <h2 className="headline-2 font-heading font-semibold text-3xl mb-2 text-gray-800">
           3. Information We Collect via Google Analytics
         </h2>
         <p className="text-base mb-2">
@@ -83,7 +83,7 @@ const PrivacyPolicy = () => {
       </section>
 
       <section className="mb-8">
-        <h2 className="headline-2 font-semibold text-2xl mb-2">
+        <h2 className="headline-2 font-heading font-semibold text-3xl mb-2 text-gray-800">
           4. Legal Basis for Processing
         </h2>
         <p className="text-base mb-2">
@@ -102,7 +102,7 @@ const PrivacyPolicy = () => {
       </section>
 
       <section className="mb-8">
-        <h2 className="headline-2 font-semibold text-2xl mb-2">
+        <h2 className="headline-2 font-heading font-semibold text-3xl mb-2 text-gray-800">
           5. How We Use Your Information
         </h2>
         <ul className="list-disc ml-6 mb-2 text-base">
@@ -118,7 +118,7 @@ const PrivacyPolicy = () => {
       </section>
 
       <section className="mb-8">
-        <h2 className="headline-2 font-semibold text-2xl mb-2">
+        <h2 className="headline-2 font-heading font-semibold text-3xl mb-2 text-gray-800">
           6. Data Sharing and Retention
         </h2>
         <p className="text-base mb-2">
@@ -141,40 +141,21 @@ const PrivacyPolicy = () => {
       </section>
 
       <section className="mb-8">
-        <h2 className="headline-2 font-semibold text-2xl mb-2">
+        <h2 className="headline-2 font-heading font-semibold text-3xl mb-2 text-gray-800">
           7. Your Rights
         </h2>
         <p className="text-base mb-2">
           Under the GDPR, you have the following rights regarding your data:
         </p>
         <ul className="list-disc ml-6 mb-2 text-base">
+          <li><strong>Right of Access:</strong> Request access to your personal data.</li>
+          <li><strong>Right to Rectification:</strong> Request correction of any inaccurate data.</li>
+          <li><strong>Right to Erasure:</strong> Request deletion of your personal data, subject to legal restrictions.</li>
+          <li><strong>Right to Restrict Processing:</strong> Request limitation of how we process your data.</li>
+          <li><strong>Right to Data Portability:</strong> Request your data in a structured, commonly used format.</li>
+          <li><strong>Right to Object:</strong> Object to processing based on our legitimate interests or for direct marketing.</li>
           <li>
-            <strong>Right of Access:</strong> Request access to your personal data.
-          </li>
-          <li>
-            <strong>Right to Rectification:</strong> Request correction of any
-            inaccurate data.
-          </li>
-          <li>
-            <strong>Right to Erasure:</strong> Request deletion of your personal
-            data, subject to legal restrictions.
-          </li>
-          <li>
-            <strong>Right to Restrict Processing:</strong> Request limitation of
-            how we process your data.
-          </li>
-          <li>
-            <strong>Right to Data Portability:</strong> Request your data in a
-            structured, commonly used format.
-          </li>
-          <li>
-            <strong>Right to Object:</strong> Object to processing based on our
-            legitimate interests or for direct marketing.
-          </li>
-          <li>
-            <strong>Right to Withdraw Consent:</strong> If processing is based on
-            consent, you may withdraw it at any time using the Google Analytics
-            opt-out browser add-on available{" "}
+            <strong>Right to Withdraw Consent:</strong> If processing is based on consent, you may withdraw it at any time using the Google Analytics opt-out browser add-on available{" "}
             <a
               href="https://tools.google.com/dlpage/gaoptout"
               className="text-purple-500 underline"
@@ -188,7 +169,9 @@ const PrivacyPolicy = () => {
       </section>
 
       <section className="mb-8">
-        <h2 className="headline-2 font-semibold text-2xl mb-2">8. Cookies</h2>
+        <h2 className="headline-2 font-heading font-semibold text-3xl mb-2 text-gray-800">
+          8. Cookies
+        </h2>
         <p className="text-base">
           Our Site uses cookies solely for analytics via Google Analytics. You can
           manage your cookie settings through your browser or opt out using the
@@ -197,7 +180,7 @@ const PrivacyPolicy = () => {
       </section>
 
       <section className="mb-8">
-        <h2 className="headline-2 font-semibold text-2xl mb-2">
+        <h2 className="headline-2 font-heading font-semibold text-3xl mb-2 text-gray-800">
           9. International Data Transfers
         </h2>
         <p className="text-base">
@@ -208,7 +191,7 @@ const PrivacyPolicy = () => {
       </section>
 
       <section className="mb-8">
-        <h2 className="headline-2 font-semibold text-2xl mb-2">
+        <h2 className="headline-2 font-heading font-semibold text-3xl mb-2 text-gray-800">
           10. Changes to This Privacy Policy
         </h2>
         <p className="text-base">
@@ -219,7 +202,9 @@ const PrivacyPolicy = () => {
       </section>
 
       <section className="mb-8">
-        <h2 className="headline-2 font-semibold text-2xl mb-2">11. Contact Us</h2>
+        <h2 className="headline-2 font-heading font-semibold text-3xl mb-2 text-gray-800">
+          11. Contact Us
+        </h2>
         <p className="text-base">
           If you have any questions or concerns about this Privacy Policy or our data
           practices, please contact us at:
@@ -237,11 +222,7 @@ const PrivacyPolicy = () => {
         >
           Back to Dashboard
         </Link>
-        <img
-          src="/images/icon-logo-.svg"
-          alt="Logo"
-          className="w-12 h-12"
-        />
+        <img src="/images/icon-logo-.svg" alt="Logo" className="w-12 h-12" />
       </div>
     </div>
   );
