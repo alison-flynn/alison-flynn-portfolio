@@ -1,14 +1,33 @@
 // src/components/PrivacyPolicy.jsx
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
+import gsap from "gsap";
 
 const PrivacyPolicy = () => {
   const navigate = useNavigate();
+  const backButtonRef = useRef(null);
 
   // Scroll to top on mount
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  // Simple GSAP animation for the back button on mount
+  useEffect(() => {
+    if (backButtonRef.current) {
+      gsap.fromTo(
+        backButtonRef.current,
+        { opacity: 0, x: 50 },
+        { opacity: 1, x: 0, duration: 1, ease: "power3.out" }
+      );
+    }
+  }, []);
+
+  // Simplified click handler to verify navigation works
+  const handleBackClick = () => {
+    console.log("Back button clicked");
+    navigate("/");
+  };
 
   return (
     <section className="min-h-screen px-6 py-16 bg-white text-gray-800 font-sans">
@@ -17,8 +36,9 @@ const PrivacyPolicy = () => {
         <div className="flex items-center justify-between mb-10">
           <img src="/images/icon-logo-.svg" alt="Logo" className="w-10 h-10" />
           <button
-            onClick={() => navigate("/")}
-            className="bg-gray-200 border border-gray-300 text-gray-800 px-4 py-2 rounded hover:bg-gray-300 transition duration-300"
+            ref={backButtonRef}
+            onClick={handleBackClick}
+            className="bg-gray-200 border border-gray-300 text-gray-800 px-4 py-2 rounded hover:bg-gray-300 transition duration-300 z-50"
           >
             ← Back to Dashboard
           </button>
@@ -60,24 +80,12 @@ const PrivacyPolicy = () => {
             Under GDPR, as well as Irish and UK data protection laws, you have several rights, including:
           </p>
           <ul className="list-disc ml-6">
-            <li>
-              <strong>Access:</strong> Request access to the personal data we hold about you.
-            </li>
-            <li>
-              <strong>Rectification:</strong> Request correction of any inaccurate or incomplete data.
-            </li>
-            <li>
-              <strong>Erasure:</strong> Request deletion of your personal data, subject to legal constraints.
-            </li>
-            <li>
-              <strong>Restriction:</strong> Request that we limit the processing of your data.
-            </li>
-            <li>
-              <strong>Data Portability:</strong> Request a copy of your data in a structured format.
-            </li>
-            <li>
-              <strong>Objection:</strong> Object to the processing of your data, particularly for direct marketing purposes.
-            </li>
+            <li><strong>Access:</strong> Request access to the personal data we hold about you.</li>
+            <li><strong>Rectification:</strong> Request correction of any inaccurate or incomplete data.</li>
+            <li><strong>Erasure:</strong> Request deletion of your personal data, subject to legal constraints.</li>
+            <li><strong>Restriction:</strong> Request that we limit the processing of your data.</li>
+            <li><strong>Data Portability:</strong> Request a copy of your data in a structured format.</li>
+            <li><strong>Objection:</strong> Object to the processing of your data, particularly for direct marketing purposes.</li>
           </ul>
 
           <h2 className="text-2xl font-semibold text-gray-800">6. Third-Party Data Transfers</h2>
@@ -97,8 +105,7 @@ const PrivacyPolicy = () => {
 
           <h2 className="text-2xl font-semibold text-gray-800">9. Contact Us</h2>
           <p>
-            If you have any questions or concerns regarding this Privacy Policy or our data practices, please contact us at:{" "}
-            <span className="underline">alisonflynn.design@gmail.com</span> or via our support channels.
+            If you have any questions or concerns regarding this Privacy Policy or our data practices, please contact us at: <span className="underline">alisonflynn.design@gmail.com</span> or via our support channels.
           </p>
 
           <p className="text-sm text-gray-500">
