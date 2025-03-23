@@ -1,204 +1,112 @@
 // src/components/PrivacyPolicy.jsx
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const PrivacyPolicy = () => {
+  const navigate = useNavigate();
+
+  // Scroll to top on mount
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
-    <div className="case-study-section max-w-4xl mx-auto px-6 py-10 bg-white/70 backdrop-blur-md rounded-2xl shadow-lg text-gray-800 leading-relaxed">
-      {/* Header with Logo */}
-      <header className="flex items-center mb-8">
-        <img
-          src="/images/icon-logo-.svg"
-          alt="Logo"
-          className="w-12 h-12 mr-4"
-        />
-        <h1 className="headline-2 font-heading font-bold text-4xl md:text-5xl tracking-wider text-gray-800">
+    <section className="min-h-screen px-6 py-16 bg-white text-gray-800 font-sans">
+      <div className="max-w-4xl mx-auto">
+        {/* Header with Back Button */}
+        <div className="flex items-center justify-between mb-10">
+          <img src="/images/icon-logo-.svg" alt="Logo" className="w-10 h-10" />
+          <button
+            onClick={() => navigate("/")}
+            className="bg-gray-200 border border-gray-300 text-gray-800 px-4 py-2 rounded hover:bg-gray-300 transition duration-300"
+          >
+            ← Back to Dashboard
+          </button>
+        </div>
+
+        {/* Title */}
+        <h1 className="text-4xl md:text-5xl font-heading font-bold mb-6 tracking-wide text-gray-800">
           Privacy Policy
         </h1>
-      </header>
-      <p className="text-lg mb-8">Effective Date: January 1, 2025</p>
 
-      <section className="mb-8">
-        <h2 className="headline-2 font-heading font-semibold text-3xl mb-2 text-gray-800">
-          1. Introduction
-        </h2>
-        <p className="text-base mb-2">
-          Welcome to Alison Flynn’s Portfolio (“Site”), available at{" "}
-          <a
-            href="https://alisonflynn.design"
-            className="text-purple-500 underline"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            https://alisonflynn.design
-          </a>
-          . This Privacy Policy explains how we collect and process data using Google Analytics – the only tracking tool used on this Site. We are committed to protecting your privacy in accordance with the General Data Protection Regulation (GDPR) and applicable Irish data protection laws.
-        </p>
-        <p className="text-base">
-          By accessing or using this Site, you consent to the practices described in this Privacy Policy. If you disagree with any part of this policy, please do not use our Site.
-        </p>
-      </section>
+        {/* Policy Content */}
+        <div className="space-y-8 leading-relaxed text-[17px] text-gray-700">
+          <p>
+            This Privacy Policy outlines how we collect, process, and use your personal data in compliance with the General Data Protection Regulation (GDPR), Irish Data Protection Laws, and relevant UK data protection legislation. By accessing or using our website, you consent to the practices described herein.
+          </p>
 
-      <section className="mb-8">
-        <h2 className="headline-2 font-heading font-semibold text-3xl mb-2 text-gray-800">
-          2. Data Controller
-        </h2>
-        <p className="text-base">
-          <strong>Data Controller:</strong> Alison Flynn <br />
-          <strong>Email:</strong> your.email@example.com <br />
-          <strong>Address:</strong> Your Address
-        </p>
-      </section>
+          <h2 className="text-2xl font-semibold text-gray-800">1. Google Analytics</h2>
+          <p>
+            We utilise Google Analytics to monitor and analyse visitor behaviour on our website. This tool collects non-personal data including pages visited, time spent on the site, browser and device types, and anonymised IP addresses. No personally identifiable information is captured.
+          </p>
 
-      <section className="mb-8">
-        <h2 className="headline-2 font-heading font-semibold text-3xl mb-2 text-gray-800">
-          3. Information We Collect via Google Analytics
-        </h2>
-        <p className="text-base mb-2">
-          We use Google Analytics to collect non-personal data about how visitors interact with our Site. This includes:
-        </p>
-        <ul className="list-disc ml-6 mb-2 text-base">
-          <li>
-            <strong>Usage Data:</strong> Pages visited, time spent on pages, browser type, device type, anonymized IP address, and referring URLs.
-          </li>
-          <li>
-            <strong>Cookies:</strong> Google Analytics uses cookies to track site usage. These cookies do not personally identify you but help us analyze traffic trends and user behavior.
-          </li>
-        </ul>
-        <p className="text-base">
-          We have enabled IP anonymization in Google Analytics, ensuring that your IP address is masked before processing, further protecting your privacy.
-        </p>
-      </section>
+          <h2 className="text-2xl font-semibold text-gray-800">2. Getform Data Processing</h2>
+          <p>
+            We may employ Getform to process data submitted via our contact and enquiry forms. Getform acts as a data processor on our behalf and processes your data strictly in accordance with our instructions and applicable data protection laws.
+          </p>
 
-      <section className="mb-8">
-        <h2 className="headline-2 font-heading font-semibold text-3xl mb-2 text-gray-800">
-          4. Legal Basis for Processing
-        </h2>
-        <p className="text-base mb-2">
-          We process your non-personal data on the following bases:
-        </p>
-        <ul className="list-disc ml-6 mb-2 text-base">
-          <li>
-            <strong>Consent:</strong> By using our Site, you consent to the collection and processing of data via Google Analytics.
-          </li>
-          <li>
-            <strong>Legitimate Interests:</strong> To improve our Site, understand visitor behavior, and enhance user experience.
-          </li>
-        </ul>
-      </section>
+          <h2 className="text-2xl font-semibold text-gray-800">3. Cookies and Local Storage</h2>
+          <p>
+            Cookies and similar local storage technologies are used to enhance your browsing experience, store your preferences, and provide us with analytics information. You can control your cookie settings through our Privacy Preference Centre.
+          </p>
 
-      <section className="mb-8">
-        <h2 className="headline-2 font-heading font-semibold text-3xl mb-2 text-gray-800">
-          5. How We Use Your Information
-        </h2>
-        <ul className="list-disc ml-6 mb-2 text-base">
-          <li>
-            <strong>Analytics & Reporting:</strong> To monitor site usage, measure traffic, and understand visitor behavior.
-          </li>
-          <li>
-            <strong>Site Optimization:</strong> To identify areas for improvement and enhance the overall user experience.
-          </li>
-        </ul>
-      </section>
+          <h2 className="text-2xl font-semibold text-gray-800">4. Data Protection and Security</h2>
+          <p>
+            We take the security of your personal data seriously. Your information is stored on secure servers with restricted access and is protected by industry-standard encryption and security protocols. We regularly review our security practices to ensure your data is safeguarded.
+          </p>
 
-      <section className="mb-8">
-        <h2 className="headline-2 font-heading font-semibold text-3xl mb-2 text-gray-800">
-          6. Data Sharing and Retention
-        </h2>
-        <p className="text-base mb-2">
-          We do not sell or trade your personal data. Google, as our data processor, processes the collected data in accordance with its own Privacy Policy, which can be viewed{" "}
-          <a
-            href="https://policies.google.com/privacy"
-            className="text-purple-500 underline"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            here
-          </a>.
-        </p>
-        <p className="text-base">
-          Data is retained in aggregated, anonymized form for analysis and only for as long as necessary to fulfill the purposes outlined in this policy.
-        </p>
-      </section>
+          <h2 className="text-2xl font-semibold text-gray-800">5. Your Rights</h2>
+          <p>
+            Under GDPR, as well as Irish and UK data protection laws, you have several rights, including:
+          </p>
+          <ul className="list-disc ml-6">
+            <li>
+              <strong>Access:</strong> Request access to the personal data we hold about you.
+            </li>
+            <li>
+              <strong>Rectification:</strong> Request correction of any inaccurate or incomplete data.
+            </li>
+            <li>
+              <strong>Erasure:</strong> Request deletion of your personal data, subject to legal constraints.
+            </li>
+            <li>
+              <strong>Restriction:</strong> Request that we limit the processing of your data.
+            </li>
+            <li>
+              <strong>Data Portability:</strong> Request a copy of your data in a structured format.
+            </li>
+            <li>
+              <strong>Objection:</strong> Object to the processing of your data, particularly for direct marketing purposes.
+            </li>
+          </ul>
 
-      <section className="mb-8">
-        <h2 className="headline-2 font-heading font-semibold text-3xl mb-2 text-gray-800">
-          7. Your Rights
-        </h2>
-        <p className="text-base mb-2">
-          Under the GDPR, you have the following rights regarding your data:
-        </p>
-        <ul className="list-disc ml-6 mb-2 text-base">
-          <li><strong>Right of Access:</strong> Request access to your personal data.</li>
-          <li><strong>Right to Rectification:</strong> Request correction of any inaccurate data.</li>
-          <li><strong>Right to Erasure:</strong> Request deletion of your personal data, subject to legal restrictions.</li>
-          <li><strong>Right to Restrict Processing:</strong> Request limitation of how we process your data.</li>
-          <li><strong>Right to Data Portability:</strong> Request your data in a structured, commonly used format.</li>
-          <li><strong>Right to Object:</strong> Object to processing based on our legitimate interests or for direct marketing.</li>
-          <li>
-            <strong>Right to Withdraw Consent:</strong> If processing is based on consent, you may withdraw it at any time using the Google Analytics opt-out browser add-on available{" "}
-            <a
-              href="https://tools.google.com/dlpage/gaoptout"
-              className="text-purple-500 underline"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              here
-            </a>.
-          </li>
-        </ul>
-      </section>
+          <h2 className="text-2xl font-semibold text-gray-800">6. Third-Party Data Transfers</h2>
+          <p>
+            In instances where we share data with third-party services (such as Google Analytics or Getform), we ensure that adequate safeguards are in place. Should your data be transferred outside the European Economic Area (EEA), such transfers will be subject to appropriate legal mechanisms.
+          </p>
 
-      <section className="mb-8">
-        <h2 className="headline-2 font-heading font-semibold text-3xl mb-2 text-gray-800">
-          8. Cookies
-        </h2>
-        <p className="text-base">
-          Our Site uses cookies solely for analytics via Google Analytics. You can manage your cookie settings through your browser or opt out using the Google Analytics opt-out add-on.
-        </p>
-      </section>
+          <h2 className="text-2xl font-semibold text-gray-800">7. Record Keeping</h2>
+          <p>
+            We maintain records of all data processing activities and your consent preferences. These records are securely stored and can be made available upon request.
+          </p>
 
-      <section className="mb-8">
-        <h2 className="headline-2 font-heading font-semibold text-3xl mb-2 text-gray-800">
-          9. International Data Transfers
-        </h2>
-        <p className="text-base">
-          Data collected via Google Analytics may be transferred and processed in countries outside the European Economic Area (EEA). Google ensures that adequate safeguards are in place in accordance with the GDPR.
-        </p>
-      </section>
+          <h2 className="text-2xl font-semibold text-gray-800">8. Changes to This Policy</h2>
+          <p>
+            We may update this Privacy Policy from time to time. Any changes will be posted on this page along with an updated "Last Updated" date. We encourage you to review this policy periodically.
+          </p>
 
-      <section className="mb-8">
-        <h2 className="headline-2 font-heading font-semibold text-3xl mb-2 text-gray-800">
-          10. Changes to This Privacy Policy
-        </h2>
-        <p className="text-base">
-          We may update this Privacy Policy from time to time. When changes occur, the "Effective Date" will be updated, and the revised policy will be posted on this page. We encourage you to review this policy periodically.
-        </p>
-      </section>
+          <h2 className="text-2xl font-semibold text-gray-800">9. Contact Us</h2>
+          <p>
+            If you have any questions or concerns regarding this Privacy Policy or our data practices, please contact us at:{" "}
+            <span className="underline">alisonflynn.design@gmail.com</span> or via our support channels.
+          </p>
 
-      <section className="mb-8">
-        <h2 className="headline-2 font-heading font-semibold text-3xl mb-2 text-gray-800">
-          11. Contact Us
-        </h2>
-        <p className="text-base">
-          If you have any questions or concerns about this Privacy Policy or our data practices, please contact us at:
-        </p>
-        <p className="text-base">
-          <strong>Email:</strong> your.email@example.com <br />
-          <strong>Address:</strong> Your Address
-        </p>
-      </section>
-
-      <div className="mt-12 flex justify-between items-center">
-        <Link
-          to="/"
-          className="px-4 py-2 bg-purple-500 hover:bg-purple-600 text-white font-bold rounded transition duration-300"
-        >
-          Back to Dashboard
-        </Link>
-        <img src="/images/icon-logo-.svg" alt="Logo" className="w-12 h-12" />
+          <p className="text-sm text-gray-500">
+            Last updated: March 2025 • This policy is compliant with GDPR, Irish Data Protection Laws, and applicable UK data protection standards.
+          </p>
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 

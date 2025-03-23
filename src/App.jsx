@@ -4,8 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ReactLenis } from "lenis/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import CookieConsent from "react-cookie-consent"; // Optional: remove if using PrivacyConsentModal only
-import PrivacyConsentModal from "./components/PrivacyConsentModal";
+import PrivacyConsentWidget from "./components/PrivacyConsentWidget";
 
 // Import components
 import LoadingScreen from "./components/LoadingScreen";
@@ -39,52 +38,9 @@ const App = () => {
   return (
     <Router>
       <ReactLenis root>
-        {/* Always visible progress bar */}
         <ProgressBar />
-
-        {/* Privacy Consent Icon/Modal */}
-        <PrivacyConsentModal />
-
-        {/* Optional Cookie Consent Banner can be removed if not needed */}
-        {/* <CookieConsent
-          location="bottom"
-          buttonText="Accept"
-          declineButtonText="Decline"
-          cookieName="portfolioCookieConsent"
-          style={{
-            background: "rgba(217, 180, 255, 0.8)",
-            fontSize: "14px",
-            fontFamily: "Inter, sans-serif",
-            padding: "16px",
-            backdropFilter: "blur(10px)",
-            color: "#333333",
-          }}
-          buttonStyle={{
-            color: "#333333",
-            fontSize: "14px",
-            borderRadius: "4px",
-            background: "#f7f7f7",
-            padding: "8px 16px",
-          }}
-          declineButtonStyle={{
-            color: "#fff",
-            fontSize: "14px",
-            borderRadius: "4px",
-            background: "#b00",
-            padding: "8px 16px",
-            marginLeft: "8px",
-          }}
-          expires={150}
-        >
-          We use cookies to enhance your experience. By clicking “Accept”, you consent to our use of cookies.{" "}
-          <a
-            href="/privacy-policy"
-            style={{ color: "#333333", textDecoration: "underline" }}
-          >
-            Learn More
-          </a>
-        </CookieConsent> */}
-
+        {/* Privacy Consent Widget */}
+        <PrivacyConsentWidget />
         {loading ? (
           <LoadingScreen onComplete={() => setLoading(false)} />
         ) : (

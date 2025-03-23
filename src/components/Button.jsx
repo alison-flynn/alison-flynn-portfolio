@@ -1,20 +1,19 @@
-/**
- * @copyright 2024 codewithsadee
- * @license Apache-2.0
+/** 
+ * @copyright 2024 codewithsadee 
+ * @license Apache-2.0 
  */
-
 import PropTypes from "prop-types";
 
-/**
- * Primary Button
+/** 
+ * Primary Button 
  */
-
-const ButtonPrimary = ({ href, target = "_self", label, icon, classes }) => {
+const ButtonPrimary = ({ href, target = "_self", label, icon, classes, onClick }) => {
   if (href) {
     return (
       <a
         href={href}
         target={target}
+        onClick={onClick}
         className={`btn btn-primary flex items-center justify-center gap-2 px-5 py-2 ${classes}`}
       >
         {label}
@@ -27,7 +26,7 @@ const ButtonPrimary = ({ href, target = "_self", label, icon, classes }) => {
     );
   } else {
     return (
-      <button className={`btn btn-primary flex items-center justify-center gap-2 px-5 py-2 ${classes}`}>
+      <button onClick={onClick} className={`btn btn-primary flex items-center justify-center gap-2 px-5 py-2 ${classes}`}>
         {label}
         {icon && (
           <span className="material-symbols-rounded text-lg leading-none">
@@ -45,18 +44,19 @@ ButtonPrimary.propTypes = {
   target: PropTypes.string,
   icon: PropTypes.string,
   classes: PropTypes.string,
+  onClick: PropTypes.func,
 };
 
-/**
- * Outline Button
+/** 
+ * Outline Button 
  */
-
-const ButtonOutline = ({ href, target = "_self", label, icon, classes }) => {
+const ButtonOutline = ({ href, target = "_self", label, icon, classes, onClick }) => {
   if (href) {
     return (
       <a
         href={href}
         target={target}
+        onClick={onClick}
         className={`btn btn-outline flex items-center justify-center gap-2 px-5 py-2 ${classes}`}
       >
         {label}
@@ -69,7 +69,7 @@ const ButtonOutline = ({ href, target = "_self", label, icon, classes }) => {
     );
   } else {
     return (
-      <button className={`btn btn-outline flex items-center justify-center gap-2 px-5 py-2 ${classes}`}>
+      <button onClick={onClick} className={`btn btn-outline flex items-center justify-center gap-2 px-5 py-2 ${classes}`}>
         {label}
         {icon && (
           <span className="material-symbols-rounded text-lg leading-none">
@@ -87,6 +87,7 @@ ButtonOutline.propTypes = {
   target: PropTypes.string,
   icon: PropTypes.string,
   classes: PropTypes.string,
+  onClick: PropTypes.func,
 };
 
 export { ButtonPrimary, ButtonOutline };

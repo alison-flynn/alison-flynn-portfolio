@@ -1,5 +1,6 @@
+// src/components/Footer.jsx
+import React, { useEffect, useRef } from "react";
 import { ButtonPrimary } from "./Button";
-import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { FaLinkedin } from "react-icons/fa";
@@ -13,6 +14,7 @@ const sitemap = [
   { label: "Work", href: "/#work" },
   { label: "Reviews", href: "/#reviews" },
   { label: "Contact Me", href: "/#contact" },
+  { label: "Privacy Policy", href: "/privacy-policy" },
 ];
 
 const caseStudies = [
@@ -48,9 +50,9 @@ const Footer = () => {
   return (
     <footer ref={footerRef} className="section bg-zinc-900 pt-16 pb-10 text-white">
       <div className="container">
-        {/* Top Section: Left (2/3) = Links, Right (1/3) = CTA */}
+        {/* Top Section: Sitemap & Case Studies */}
         <div className="lg:grid lg:grid-cols-3 gap-12">
-          {/* LEFT SIDE (2/3): Sitemap & Case Studies in two columns */}
+          {/* LEFT SIDE (Sitemap and Case Studies) */}
           <div className="lg:col-span-2 grid grid-cols-2 gap-6">
             {/* Sitemap Column */}
             <div>
@@ -91,7 +93,7 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* RIGHT SIDE (1/3): CTA TEXT + BUTTON */}
+          {/* RIGHT SIDE: CTA */}
           <div className="lg:col-span-1 lg:flex lg:flex-col lg:items-end">
             <h2 className="text-4xl md:text-5xl font-heading font-bold leading-tight tracking-wide mb-6 lg:max-w-[12ch] fade-up text-right">
               Let’s collaborate and create something exceptional.
@@ -99,7 +101,6 @@ const Footer = () => {
             <p className="text-lg text-zinc-400 leading-relaxed text-right fade-up mb-6">
               Have a project in mind? Let’s start a conversation.
             </p>
-            {/* Button below the CTA text */}
             <div className="fade-up">
               <ButtonPrimary
                 href="mailto:alisonlflynn1@gmail.com"
@@ -111,17 +112,9 @@ const Footer = () => {
         </div>
 
         {/* Bottom Section */}
-        <div className="relative fade-up mt-12 pt-12">
-          {/* Faded Image in Bottom Right */}
-          <img
-            src="/images/logo-1.svg" /* Replace with your actual image path */
-            alt="Faded Decorative"
-            className="absolute bottom-0 right-0 w-[80px]  pointer-events-none"
-          />
-
-          {/* LinkedIn + Copyright on Left */}
+        <div className="relative fade-up mt-12 pt-12 flex flex-col sm:flex-row justify-between items-center">
+          {/* Left: LinkedIn & Copyright */}
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
-            {/* LinkedIn Icon */}
             <a
               href="https://www.linkedin.com/in/alison-flynn1/"
               target="_blank"
@@ -130,15 +123,20 @@ const Footer = () => {
             >
               <FaLinkedin size={28} />
             </a>
-
-            {/* Copyright */}
             <p className="text-sm font-sans text-zinc-500">
               &copy; {new Date().getFullYear()}{" "}
-              <span className="text-zinc-200 font-bold ml-1">
-                Alison Flynn
-              </span>{" "}
+              <span className="text-zinc-200 font-bold ml-1">Alison Flynn</span>{" "}
               | UX Designer
             </p>
+          </div>
+          {/* Right: Additional Links */}
+          <div className="mt-6 sm:mt-0">
+            <a
+              href="/privacy-policy"
+              className="text-sm font-sans text-zinc-400 hover:text-purple-400 transition-colors duration-200"
+            >
+              Privacy Policy
+            </a>
           </div>
         </div>
       </div>
