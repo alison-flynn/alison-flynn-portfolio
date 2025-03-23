@@ -4,7 +4,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ReactLenis } from "lenis/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import CookieConsent from "react-cookie-consent";
+import CookieConsent from "react-cookie-consent"; // Optional: remove if using PrivacyConsentModal only
+import PrivacyConsentModal from "./components/PrivacyConsentModal";
 
 // Import components
 import LoadingScreen from "./components/LoadingScreen";
@@ -41,19 +42,22 @@ const App = () => {
         {/* Always visible progress bar */}
         <ProgressBar />
 
-        {/* Cookie Consent Banner with glassmorphism lilac styling */}
-        <CookieConsent
+        {/* Privacy Consent Icon/Modal */}
+        <PrivacyConsentModal />
+
+        {/* Optional Cookie Consent Banner can be removed if not needed */}
+        {/* <CookieConsent
           location="bottom"
           buttonText="Accept"
           declineButtonText="Decline"
           cookieName="portfolioCookieConsent"
           style={{
-            background: "rgba(217, 180, 255, 0.8)", // translucent lilac
+            background: "rgba(217, 180, 255, 0.8)",
             fontSize: "14px",
             fontFamily: "Inter, sans-serif",
             padding: "16px",
             backdropFilter: "blur(10px)",
-            color: "#333333", // dark grey text
+            color: "#333333",
           }}
           buttonStyle={{
             color: "#333333",
@@ -79,9 +83,8 @@ const App = () => {
           >
             Learn More
           </a>
-        </CookieConsent>
+        </CookieConsent> */}
 
-        {/* Loading Screen */}
         {loading ? (
           <LoadingScreen onComplete={() => setLoading(false)} />
         ) : (

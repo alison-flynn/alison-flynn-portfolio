@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const PrivacyPolicy = () => {
   return (
-    <div className="case-study-section max-w-4xl mx-auto px-6 py-10 text-gray-800 leading-relaxed bg-white/70 backdrop-blur-md rounded-2xl shadow-lg">
+    <div className="case-study-section max-w-4xl mx-auto px-6 py-10 bg-white/70 backdrop-blur-md rounded-2xl shadow-lg text-gray-800 leading-relaxed">
       {/* Header with Logo */}
       <header className="flex items-center mb-8">
         <img
@@ -32,16 +32,10 @@ const PrivacyPolicy = () => {
           >
             https://alisonflynn.design
           </a>
-          . This Privacy Policy explains how we collect and process data using
-          Google Analytics – the only tracking tool used on this Site. We are
-          committed to protecting your privacy in accordance with the General
-          Data Protection Regulation (GDPR) and applicable Irish data protection
-          laws.
+          . This Privacy Policy explains how we collect and process data using Google Analytics – the only tracking tool used on this Site. We are committed to protecting your privacy in accordance with the General Data Protection Regulation (GDPR) and applicable Irish data protection laws.
         </p>
         <p className="text-base">
-          By accessing or using this Site, you consent to the practices described
-          in this Privacy Policy. If you disagree with any part of this policy,
-          please do not use our Site.
+          By accessing or using this Site, you consent to the practices described in this Privacy Policy. If you disagree with any part of this policy, please do not use our Site.
         </p>
       </section>
 
@@ -61,24 +55,18 @@ const PrivacyPolicy = () => {
           3. Information We Collect via Google Analytics
         </h2>
         <p className="text-base mb-2">
-          We use Google Analytics to collect non-personal data about how visitors
-          interact with our Site. This includes:
+          We use Google Analytics to collect non-personal data about how visitors interact with our Site. This includes:
         </p>
         <ul className="list-disc ml-6 mb-2 text-base">
           <li>
-            <strong>Usage Data:</strong> Pages visited, time spent on pages,
-            browser type, device type, anonymized IP address, and referring URLs.
+            <strong>Usage Data:</strong> Pages visited, time spent on pages, browser type, device type, anonymized IP address, and referring URLs.
           </li>
           <li>
-            <strong>Cookies:</strong> Google Analytics uses cookies to track site
-            usage. These cookies do not personally identify you but help us
-            analyze traffic trends and user behavior.
+            <strong>Cookies:</strong> Google Analytics uses cookies to track site usage. These cookies do not personally identify you but help us analyze traffic trends and user behavior.
           </li>
         </ul>
         <p className="text-base">
-          We have enabled IP anonymization in Google Analytics, ensuring that your
-          IP address is masked before processing, further protecting your
-          privacy.
+          We have enabled IP anonymization in Google Analytics, ensuring that your IP address is masked before processing, further protecting your privacy.
         </p>
       </section>
 
@@ -91,12 +79,10 @@ const PrivacyPolicy = () => {
         </p>
         <ul className="list-disc ml-6 mb-2 text-base">
           <li>
-            <strong>Consent:</strong> By using our Site, you consent to the
-            collection and processing of data via Google Analytics.
+            <strong>Consent:</strong> By using our Site, you consent to the collection and processing of data via Google Analytics.
           </li>
           <li>
-            <strong>Legitimate Interests:</strong> To improve our Site, understand
-            visitor behavior, and enhance user experience.
+            <strong>Legitimate Interests:</strong> To improve our Site, understand visitor behavior, and enhance user experience.
           </li>
         </ul>
       </section>
@@ -107,12 +93,10 @@ const PrivacyPolicy = () => {
         </h2>
         <ul className="list-disc ml-6 mb-2 text-base">
           <li>
-            <strong>Analytics & Reporting:</strong> To monitor site usage, measure
-            traffic, and understand visitor behavior.
+            <strong>Analytics & Reporting:</strong> To monitor site usage, measure traffic, and understand visitor behavior.
           </li>
           <li>
-            <strong>Site Optimization:</strong> To identify areas for improvement
-            and enhance the overall user experience.
+            <strong>Site Optimization:</strong> To identify areas for improvement and enhance the overall user experience.
           </li>
         </ul>
       </section>
@@ -122,9 +106,7 @@ const PrivacyPolicy = () => {
           6. Data Sharing and Retention
         </h2>
         <p className="text-base mb-2">
-          We do not sell or trade your personal data. Google, as our data processor,
-          processes the collected data in accordance with its own Privacy Policy,
-          which can be viewed{" "}
+          We do not sell or trade your personal data. Google, as our data processor, processes the collected data in accordance with its own Privacy Policy, which can be viewed{" "}
           <a
             href="https://policies.google.com/privacy"
             className="text-purple-500 underline"
@@ -135,8 +117,7 @@ const PrivacyPolicy = () => {
           </a>.
         </p>
         <p className="text-base">
-          Data is retained in aggregated, anonymized form for analysis and only for
-          as long as necessary to fulfill the purposes outlined in this policy.
+          Data is retained in aggregated, anonymized form for analysis and only for as long as necessary to fulfill the purposes outlined in this policy.
         </p>
       </section>
 
@@ -173,9 +154,7 @@ const PrivacyPolicy = () => {
           8. Cookies
         </h2>
         <p className="text-base">
-          Our Site uses cookies solely for analytics via Google Analytics. You can
-          manage your cookie settings through your browser or opt out using the
-          Google Analytics opt-out add-on.
+          Our Site uses cookies solely for analytics via Google Analytics. You can manage your cookie settings through your browser or opt out using the Google Analytics opt-out add-on.
         </p>
       </section>
 
@@ -184,9 +163,7 @@ const PrivacyPolicy = () => {
           9. International Data Transfers
         </h2>
         <p className="text-base">
-          Data collected via Google Analytics may be transferred and processed in
-          countries outside the European Economic Area (EEA). Google ensures that
-          adequate safeguards are in place in accordance with the GDPR.
+          Data collected via Google Analytics may be transferred and processed in countries outside the European Economic Area (EEA). Google ensures that adequate safeguards are in place in accordance with the GDPR.
         </p>
       </section>
 
@@ -195,9 +172,7 @@ const PrivacyPolicy = () => {
           10. Changes to This Privacy Policy
         </h2>
         <p className="text-base">
-          We may update this Privacy Policy from time to time. When changes occur,
-          the "Effective Date" will be updated, and the revised policy will be
-          posted on this page. We encourage you to review this policy periodically.
+          We may update this Privacy Policy from time to time. When changes occur, the "Effective Date" will be updated, and the revised policy will be posted on this page. We encourage you to review this policy periodically.
         </p>
       </section>
 
@@ -206,8 +181,7 @@ const PrivacyPolicy = () => {
           11. Contact Us
         </h2>
         <p className="text-base">
-          If you have any questions or concerns about this Privacy Policy or our data
-          practices, please contact us at:
+          If you have any questions or concerns about this Privacy Policy or our data practices, please contact us at:
         </p>
         <p className="text-base">
           <strong>Email:</strong> your.email@example.com <br />
