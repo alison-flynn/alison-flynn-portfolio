@@ -1,12 +1,12 @@
+// src/App.jsx
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ReactLenis } from "lenis/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import CookieConsent from "react-cookie-consent";
-import PrivacyPolicy from "./components/PrivacyPolicy";
 
-// Import the ProgressBar and LoadingScreen components
+// Import components
 import LoadingScreen from "./components/LoadingScreen";
 import ProgressBar from "./components/ProgressBar";
 
@@ -15,13 +15,13 @@ import LandingPage from "./components/LandingPage";
 import AirlineCaseStudy from "./components/AirlineCaseStudy";
 import EngineeringCaseStudy from "./components/EngineeringCaseStudy";
 import CareerCoachCaseStudy from "./components/CareerCoachCaseStudy";
+import PrivacyPolicy from "./components/PrivacyPolicy";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const App = () => {
   const [loading, setLoading] = useState(true);
 
-  // Optional: GSAP reveal animation for elements with .reveal-up
   useEffect(() => {
     if (!loading) {
       const revealEls = document.querySelectorAll(".reveal-up");
@@ -79,7 +79,7 @@ const App = () => {
           </a>
         </CookieConsent>
 
-        {/* Show LoadingScreen until onComplete sets loading = false */}
+        {/* Loading Screen */}
         {loading ? (
           <LoadingScreen onComplete={() => setLoading(false)} />
         ) : (
@@ -89,7 +89,6 @@ const App = () => {
             <Route path="/engineeringcasestudy" element={<EngineeringCaseStudy />} />
             <Route path="/careercoachcasestudy" element={<CareerCoachCaseStudy />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-
           </Routes>
         )}
       </ReactLenis>
