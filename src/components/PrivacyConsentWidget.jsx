@@ -5,7 +5,7 @@ import { MdSecurity } from "react-icons/md";
 import { ButtonPrimary, ButtonOutline } from "./Button";
 
 const PrivacyConsentWidget = () => {
-  const [showModal, setShowModal] = useState(true); // modal opens on load
+  const [showModal, setShowModal] = useState(true); // Modal opens on load
   const [consent, setConsent] = useState(null); // "accepted" or "declined"
   const [loading, setLoading] = useState(false);
   const [confirmed, setConfirmed] = useState("");
@@ -34,10 +34,15 @@ const PrivacyConsentWidget = () => {
       localStorage.setItem("privacyConsent", choice);
       setConsent(choice);
       setLoading(false);
-      setConfirmed(choice === "accepted" ? "Thank you for accepting." : "No problem.");
+      setConfirmed(
+        choice === "accepted"
+          ? "Thank you for accepting all cookies."
+          : "You have chosen to reject non‑essential cookies."
+      );
       setTimeout(() => {
         setShowModal(false);
-        navigate("/"); // Redirect to homepage ("/")
+        navigate("/"); // Redirect to homepage
+        window.scrollTo(0, savedScrollPosition.current);
       }, 2000);
     }, 1200);
   };
@@ -47,16 +52,16 @@ const PrivacyConsentWidget = () => {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center">
       {showModal && (
-        <div className="bg-white/90 backdrop-blur-md rounded-2xl shadow-xl p-6 max-w-3xl w-full text-gray-800 relative">
+        <div className="bg-white/95 backdrop-blur-md rounded-2xl shadow-2xl p-8 max-w-3xl w-full text-gray-800 relative">
           {/* Header: Title only (no logo) */}
-          <header className="mb-4">
-            <h2 className="text-2xl font-bold font-heading tracking-wide">
+          <header className="mb-6">
+            <h2 className="text-2xl md:text-3xl font-bold font-heading tracking-wide">
               Privacy Consent
             </h2>
           </header>
           {loading ? (
             <div className="flex flex-col items-center">
-              <div className="w-10 h-10 rounded-full border-4 border-transparent border-t-green-400 border-b-green-400 animate-spin mb-3"></div>
+              <div className="w-10 h-10 rounded-full border-4 border-transparent border-t-green-400 border-b-green-400 animate-spin mb-4"></div>
               <p className="text-sm">Processing your choice...</p>
             </div>
           ) : confirmed ? (
@@ -64,7 +69,9 @@ const PrivacyConsentWidget = () => {
           ) : (
             <>
               <p className="text-base mb-6">
-                We use cookies for analytics via Google Analytics. Do you want to share your data to enhance your experience? Your data will be used solely for analytics.{" "}
+                We use cookies to enhance your browsing experience, provide personalised content, and analyse our traffic. Strictly necessary cookies are always enabled. By clicking{" "}
+                <strong>"Accept All Cookies"</strong> you consent to our use of non‑essential cookies (including analytics and advertising cookies). If you choose{" "}
+                <strong>"Reject Non‑Essential Cookies"</strong>, only essential cookies will be used. For more details, please read our{" "}
                 <Link
                   to="/privacy-policy"
                   className="underline text-green-500 transition-colors duration-200 hover:text-green-400"
@@ -73,19 +80,19 @@ const PrivacyConsentWidget = () => {
                     navigate("/privacy-policy");
                   }}
                 >
-                  Read More
-                </Link>
+                  Privacy Policy
+                </Link>.
               </p>
               <div className="flex flex-col md:flex-row gap-4">
                 <ButtonPrimary
-                  label="Yes"
+                  label="Accept All Cookies"
                   onClick={() => handleConsent("accepted")}
-                  classes="relative overflow-hidden px-4 py-2 rounded w-full font-semibold text-gray-900 bg-white/10 backdrop-blur-sm ring-1 ring-green-400 transition-transform duration-300 hover:scale-105"
+                  classes="px-4 py-2 rounded w-full font-semibold text-white bg-zinc-900 hover:bg-zinc-800 transition-colors duration-300"
                 />
                 <ButtonOutline
-                  label="No"
+                  label="Reject Non‑Essential Cookies"
                   onClick={() => handleConsent("declined")}
-                  classes="px-4 py-2 bg-gray-800 hover:bg-gray-900 text-white font-semibold rounded transition-colors duration-300 w-full"
+                  classes="px-4 py-2 rounded w-full font-semibold text-white border border-gray-700 bg-gray-800 hover:bg-gray-700 transition-colors duration-300"
                 />
               </div>
             </>

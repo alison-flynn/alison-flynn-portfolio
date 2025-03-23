@@ -60,8 +60,8 @@ const CaseStudyHeader = () => {
           href="/"
           className="btn btn-secondary max-md:hidden md:justify-self-end font-accent uppercase tracking-widest"
         >
-          Return
-        </a>
+            ← Return
+            </a>
       </div>
     </header>
   );

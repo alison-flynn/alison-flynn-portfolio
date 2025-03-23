@@ -52,7 +52,7 @@ const Footer = () => {
       <div className="container">
         {/* Top Section: Sitemap & Case Studies */}
         <div className="lg:grid lg:grid-cols-3 gap-12">
-          {/* LEFT SIDE (Sitemap and Case Studies) */}
+          {/* LEFT SIDE: Sitemap & Case Studies in two columns */}
           <div className="lg:col-span-2 grid grid-cols-2 gap-6">
             {/* Sitemap Column */}
             <div>
@@ -114,7 +114,7 @@ const Footer = () => {
         {/* Bottom Section */}
         <div className="relative fade-up mt-12 pt-12 flex flex-col sm:flex-row justify-between items-center">
           {/* Left: LinkedIn & Copyright */}
-          <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-right justify-center">
             <a
               href="https://www.linkedin.com/in/alison-flynn1/"
               target="_blank"
@@ -130,7 +130,7 @@ const Footer = () => {
             </p>
           </div>
           {/* Right: Additional Links */}
-          <div className="mt-6 sm:mt-0">
+          <div className="mt-6 sm:mt-0 text-center">
             <a
               href="/privacy-policy"
               className="text-sm font-sans text-zinc-400 hover:text-purple-400 transition-colors duration-200"
