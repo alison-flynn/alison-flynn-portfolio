@@ -3,9 +3,9 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ReactLenis } from "lenis/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import CookieConsent from "react-cookie-consent";
 
 // Import the ProgressBar and LoadingScreen components
-
 import LoadingScreen from "./components/LoadingScreen";
 import ProgressBar from "./components/ProgressBar";
 
@@ -37,15 +37,50 @@ const App = () => {
   return (
     <Router>
       <ReactLenis root>
-        {/* Always visible at the top */}
+        {/* Always visible progress bar */}
         <ProgressBar />
+
+        {/* Cookie Consent Banner */}
+        <CookieConsent
+          location="bottom"
+          buttonText="Accept"
+          declineButtonText="Decline"
+          cookieName="portfolioCookieConsent"
+          style={{
+            background: "#2B373B",
+            fontSize: "14px",
+            fontFamily: "Inter, sans-serif",
+            padding: "16px",
+          }}
+          buttonStyle={{
+            color: "#2B373B",
+            fontSize: "14px",
+            borderRadius: "4px",
+            background: "#f7f7f7",
+            padding: "8px 16px",
+          }}
+          declineButtonStyle={{
+            color: "#fff",
+            fontSize: "14px",
+            borderRadius: "4px",
+            background: "#b00",
+            padding: "8px 16px",
+            marginLeft: "8px",
+          }}
+          expires={150}
+        >
+          We use cookies to enhance your experience. By clicking “Accept”, you consent to our use of cookies.{" "}
+          <a
+            href="/privacy-policy"
+            style={{ color: "#f7f7f7", textDecoration: "underline" }}
+          >
+            Learn More
+          </a>
+        </CookieConsent>
 
         {/* Show LoadingScreen until onComplete sets loading = false */}
         {loading ? (
-  <LoadingScreen
-    onComplete={() => setLoading(false)}
-  
-          />
+          <LoadingScreen onComplete={() => setLoading(false)} />
         ) : (
           <Routes>
             <Route path="/" element={<LandingPage />} />
