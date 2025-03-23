@@ -4,6 +4,7 @@ import { ReactLenis } from "lenis/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import CookieConsent from "react-cookie-consent";
+import PrivacyPolicy from "./components/PrivacyPolicy";
 
 // Import the ProgressBar and LoadingScreen components
 import LoadingScreen from "./components/LoadingScreen";
@@ -87,6 +88,8 @@ const App = () => {
             <Route path="/airlinecasestudy" element={<AirlineCaseStudy />} />
             <Route path="/engineeringcasestudy" element={<EngineeringCaseStudy />} />
             <Route path="/careercoachcasestudy" element={<CareerCoachCaseStudy />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+
           </Routes>
         )}
       </ReactLenis>
