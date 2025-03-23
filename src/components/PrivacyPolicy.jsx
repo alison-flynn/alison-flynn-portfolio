@@ -8,12 +8,12 @@ const PrivacyPolicy = () => {
   const backButtonRef = useRef(null);
   const toggleButtonRef = useRef(null);
 
-  // Scroll to top on mount
+  // Scroll to top when the component mounts
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  // Use useLayoutEffect to ensure refs are available before animation
+  // Animate the Back and Toggle buttons on mount
   useLayoutEffect(() => {
     if (backButtonRef.current) {
       gsap.fromTo(
@@ -31,36 +31,32 @@ const PrivacyPolicy = () => {
     }
   }, []);
 
-  // Handle Back button: animate then navigate to "/"
+  // Handle Back button: animate then navigate to home ("/")
   const handleBackClick = () => {
     if (backButtonRef.current) {
       gsap.to(backButtonRef.current, {
         scale: 0.95,
         duration: 0.2,
-        onComplete: () => {
-          console.log("Back button clicked, navigating home");
-          navigate("/");
-        },
+        onComplete: () => navigate("/"),
       });
     } else {
       navigate("/");
     }
   };
 
-  // Handle Toggle button: animate, remove consent, then navigate to "/" so the consent modal appears again
+  // Handle Toggle button: animate, set flag to force modal open, then navigate home
   const handleToggleConsent = () => {
     if (toggleButtonRef.current) {
       gsap.to(toggleButtonRef.current, {
         scale: 0.95,
         duration: 0.2,
         onComplete: () => {
-          console.log("Toggle button clicked, removing consent and navigating home");
-          localStorage.removeItem("privacyConsent");
+          localStorage.setItem("forceConsentModal", "true");
           navigate("/");
         },
       });
     } else {
-      localStorage.removeItem("privacyConsent");
+      localStorage.setItem("forceConsentModal", "true");
       navigate("/");
     }
   };

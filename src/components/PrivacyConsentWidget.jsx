@@ -1,7 +1,6 @@
 // src/components/PrivacyConsentWidget.jsx
 import React, { useState, useEffect, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { MdSecurity } from "react-icons/md";
 import { ButtonPrimary, ButtonOutline } from "./Button";
 
 const PrivacyConsentWidget = () => {
@@ -12,10 +11,17 @@ const PrivacyConsentWidget = () => {
   const savedScrollPosition = useRef(0);
   const navigate = useNavigate();
 
-  // Check if consent is already set
   useEffect(() => {
+    // Check if the "forceConsentModal" flag is set
+    const forceModal = localStorage.getItem("forceConsentModal");
     const stored = localStorage.getItem("privacyConsent");
-    if (stored) {
+
+    if (forceModal === "true") {
+      // Remove the flag and force the modal to show
+      localStorage.removeItem("forceConsentModal");
+      setConsent(null);
+      setShowModal(true);
+    } else if (stored) {
       setConsent(stored);
       setShowModal(false);
     }
@@ -41,19 +47,20 @@ const PrivacyConsentWidget = () => {
       );
       setTimeout(() => {
         setShowModal(false);
-        navigate("/"); // Redirect to homepage
+        navigate("/"); // Return to home page
         window.scrollTo(0, savedScrollPosition.current);
       }, 2000);
     }, 1200);
   };
 
-  if (consent) return null;
+  // If consent exists and no forced modal flag is present, do not show the widget
+  if (consent && !localStorage.getItem("forceConsentModal")) return null;
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center">
       {showModal && (
         <div className="bg-white/95 backdrop-blur-md rounded-2xl shadow-2xl p-8 max-w-3xl w-full text-gray-800 relative">
-          {/* Header: Title only (no logo) */}
+          {/* Header: Title only */}
           <header className="mb-6">
             <h2 className="text-2xl md:text-3xl font-bold font-heading tracking-wide">
               Privacy Consent

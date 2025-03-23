@@ -114,7 +114,7 @@ const Footer = () => {
         {/* Bottom Section */}
         <div className="relative fade-up mt-12 pt-12 flex flex-col sm:flex-row justify-between items-center">
           {/* Left: LinkedIn & Copyright */}
-          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-right justify-center">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify- justify-center">
             <a
               href="https://www.linkedin.com/in/alison-flynn1/"
               target="_blank"
