@@ -14,7 +14,7 @@ import ProgressBar from "./components/ProgressBar";
 import LandingPage from "./components/LandingPage";
 import AirlineCaseStudy from "./components/AirlineCaseStudy";
 import EngineeringCaseStudy from "./components/EngineeringCaseStudy";
-import CareerCoachCaseStudy from "./components/CareerCoachCaseStudy";
+import FleetManagementCaseStudy from "./components/FleetManagementCaseStudy";
 import PrivacyPolicy from "./components/PrivacyPolicy";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -48,7 +48,7 @@ const App = () => {
             <Route path="/" element={<LandingPage />} />
             <Route path="/airlinecasestudy" element={<AirlineCaseStudy />} />
             <Route path="/engineeringcasestudy" element={<EngineeringCaseStudy />} />
-            <Route path="/careercoachcasestudy" element={<CareerCoachCaseStudy />} />
+            <Route path="/fleetmanagementcasestudy" element={<FleetManagementCaseStudy />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           </Routes>
         )}

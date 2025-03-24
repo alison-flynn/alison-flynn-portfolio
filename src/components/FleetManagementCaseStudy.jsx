@@ -21,49 +21,48 @@ gsap.registerPlugin(ScrollTrigger);
 const personas = [
   {
     iconType: "career",
-    image: "/images/car2.svg",
-    name: "Sarah Johnson",
-    role: "Recent Graduate",
-    beforeQuote: "I felt lost trying to figure out my next steps after school.",
-    quote:
-      "This platform clarified my career path and streamlined my CAO journey.",
+    image: "/images/mech1.svg",
+    name: "Ciaran Flynn",
+    role: "Head Mechanic",
+    beforeQuote: "I don’t want to be typing — I just want to tick things, take a photo, and move on.",
+    quote: "This system does what the whiteboard couldn’t — keeps me ahead of the work.",
     rating: 5,
-    goals: "Find clear direction and secure the right education opportunity.",
-    painPoints: "Confusing advice and overwhelming options.",
-    mentalModel: "Prefers concise, personalised guidance.",
-  },
+    goals: "Digitise daily job cards, track services, and reduce paperwork.",
+    painPoints: "Whiteboards go out-of-date, forms get lost, no early reminders.",
+    mentalModel: "Visual and checklist-first. Needs speed, structure, and zero fluff.",
+  }
+  
+  ,
   {
     iconType: "career",
-    image: "/images/car1.svg",
-    name: "Liam O'Brien",
-    role: "Leaving Cert Student",
-    beforeQuote: "I had no idea how to pick the right subjects or career path.",
-    quote:
-      "The platform makes understanding my options much simpler and less overwhelming.",
+    image: "/images/mech.svg",
+    name: "Tommy Byrne",
+    role: "Junior Mechanic",
+    beforeQuote: "I usually just ask what to do next — I don't check the board.",
+    quote: "It’s way easier to follow the plan when it’s in my hand.",
     rating: 4,
-    goals: "Receive clear guidance for Leaving Cert subject choices and career planning.",
-    painPoints: "Too many conflicting options and unclear future prospects.",
-    mentalModel: "Needs structured, step-by-step advice for educational decisions.",
-  },
+    goals: "See what jobs are next and log work quickly with minimal effort.",
+    painPoints: "Misses updates, forgets to log parts, no way to check history on his own.",
+    mentalModel: "Mobile-first. Needs clear task lists and easy photo logging.",
+  }
+  ,
   {
     iconType: "career",
-    image: "/images/car3.svg",
-    name: "Mark Williams",
-    role: "Career Changer",
-    beforeQuote:
-      "Most career advice I found was too general and didn’t apply to my skills.",
-    quote:
-      "Interactive assessments and resource links sparked new insights for me.",
-    rating: 4,
-    goals: "Transition confidently into a new career with clear guidance.",
-    painPoints: "Generic advice that lacks personalisation.",
-    mentalModel:
-      "Needs detailed, actionable insights to bridge his skills to a new field.",
-  },
+    image: "/images/mech2.svg",
+    name: "Mairead Walsh",
+    role: "Office Administrator",
+    beforeQuote: "We usually dig through binders when RSA shows up.",
+    quote: "Now I can pull service records in seconds instead of hours.",
+    rating: 5,
+    goals: "Export inspection records and view service status without calling the garage.",
+    painPoints: "No visibility into job cards or due dates, audits are time-consuming.",
+    mentalModel: "Needs filterable records, easy exports, and a clear overview of fleet health.",
+  }
+  ,
 ];
 
 // ------------------------- Main Component -------------------------
-const CareerCoachCaseStudy = () => {
+const FleetManagementCaseStudy = () => {
   const mainRef = useRef(null);
 
   useLayoutEffect(() => {
@@ -101,11 +100,11 @@ const CareerCoachCaseStudy = () => {
       <CaseStudyDropdown />
 
       <CaseStudyHero
-        title="Career Guidance Services"
-        subtitle="Empowering students with personalised CAO guidance, interactive open-day maps, quick resources, and easy booking for expert consultations."
-        role="Lead UX Designer"
-        tools="Figma"
-        imageSrc="/images/herograd.svg"
+        title="Fleet Management System"
+        subtitle="Empowering mechanics with digital job cards, service logs, tool tracking, and smart reminders — all tailored for real-world, high-pressure workshop environments."
+        role="UX Designer, Product Owner"
+        tools="Pen & paper (discovery), Miro (flows), Notion (requirements), Figma (wireframes), React + Tailwind (build-ready)"
+        imageSrc="/images/mech3.svg"
       />
 
       <main ref={mainRef} className="pt-20 container mx-auto px-6 space-y-40">
@@ -120,7 +119,7 @@ const CareerCoachCaseStudy = () => {
             </h2>
             <div className="w-24 h-1 bg-purple-400 mt-5 mb-7"></div>
             <p className="text-lg font-sans text-zinc-300 leading-relaxed tracking-wide">
-              I have begun by identifying the unique needs of students...
+            TrackPit replaces four physical whiteboards, three paper forms, and countless WhatsApp messages used to manage a 60-vehicle roadworks fleet. The project began by observing the head mechanic at CMP Ireland — and designing a system that mirrored his workflow, not replaced it.
             </p>
           </div>
           {/* User Personas */}
@@ -176,4 +175,4 @@ const CareerCoachCaseStudy = () => {
   );
 };
 
-export default CareerCoachCaseStudy;
+export default FleetManagementCaseStudy;

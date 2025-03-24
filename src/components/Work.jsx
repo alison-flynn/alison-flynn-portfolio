@@ -24,11 +24,11 @@ const works = [
   },
   {
     imgSrc: "/images/cg.svg",
-    title: "Career Guidance Services",
+    title: "Fleet Management",
     tags: ["User Research", "Wireframing", "Usability Testing"],
-    projectLink: "/careercoachcasestudy",
+    projectLink: "/fleetmanagementcasestudy",
     description:
-      "An in-progress project with a client, crafting an intuitive platform for career guidance services in Ireland.",
+      "An in-progress project designing an intuitive platform to digitise job cards, inspections, tools, and service logs for a 60-vehicle fleet in Ireland.",
   },
 ];
 

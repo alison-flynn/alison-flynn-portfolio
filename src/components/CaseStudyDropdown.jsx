@@ -10,7 +10,7 @@ const CaseStudyDropdown = () => {
   const caseStudies = [
     { label: "Elevating Travel Booking", path: "/airlinecasestudy" },
     { label: "Streamlining Engineering", path: "/engineeringcasestudy" },
-    { label: "Career Guidance Services", path: "/careercoachcasestudy" },
+    { label: "Fleet Management", path: "/fleetmanagementcasestudy" },
   ];
 
   // Update selected case study based on current route

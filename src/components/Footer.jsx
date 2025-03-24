@@ -20,7 +20,7 @@ const sitemap = [
 const caseStudies = [
   { label: "Airia Airline Website", href: "/airlinecasestudy" },
   { label: "Streamlining Engineering", href: "/engineeringcasestudy" },
-  { label: "Career Coach", href: "/careercoachcasestudy" },
+  { label: "Fleet Management", href: "/fleetmanagementcasestudy" },
 ];
 
 const Footer = () => {

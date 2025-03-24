@@ -161,7 +161,7 @@ const PrivacyPolicy = () => {
           <h2 className="text-2xl font-semibold text-zinc-900">9. Contact Us</h2>
           <p>
             If you have any questions or concerns regarding this Privacy Policy or our data practices, please contact us at:{" "}
-            <span className="underline">alisonflynn.design@gmail.com</span>.
+            <span className="underline">alisonlflynn1@gmail.com</span>.
           </p>
 
           <p className="text-sm text-gray-500 mt-4">
