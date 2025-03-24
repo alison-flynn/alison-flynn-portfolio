@@ -8,12 +8,12 @@ const PrivacyPolicy = () => {
   const backButtonRef = useRef(null);
   const toggleButtonRef = useRef(null);
 
-  // Scroll to top when the component mounts
+  // Scroll to top on mount
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  // Animate the Back and Toggle buttons on mount
+  // Animate buttons on mount
   useLayoutEffect(() => {
     if (backButtonRef.current) {
       gsap.fromTo(
@@ -37,25 +37,27 @@ const PrivacyPolicy = () => {
       gsap.to(backButtonRef.current, {
         scale: 0.95,
         duration: 0.2,
-        onComplete: () => navigate("/"),
+        onComplete: () => navigate("/")
       });
     } else {
       navigate("/");
     }
   };
 
-  // Handle Toggle button: animate, set flag to force modal open, then navigate home
+  // Handle Toggle button: animate, remove stored consent, set flag, then navigate to home
   const handleToggleConsent = () => {
     if (toggleButtonRef.current) {
       gsap.to(toggleButtonRef.current, {
         scale: 0.95,
         duration: 0.2,
         onComplete: () => {
+          localStorage.removeItem("privacyConsent");
           localStorage.setItem("forceConsentModal", "true");
           navigate("/");
-        },
+        }
       });
     } else {
+      localStorage.removeItem("privacyConsent");
       localStorage.setItem("forceConsentModal", "true");
       navigate("/");
     }

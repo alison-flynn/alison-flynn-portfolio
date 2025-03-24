@@ -39,7 +39,7 @@ const App = () => {
     <Router>
       <ReactLenis root>
         <ProgressBar />
-        {/* Privacy Consent Widget */}
+        {/* Always render Privacy Consent Widget on home */}
         <PrivacyConsentWidget />
         {loading ? (
           <LoadingScreen onComplete={() => setLoading(false)} />

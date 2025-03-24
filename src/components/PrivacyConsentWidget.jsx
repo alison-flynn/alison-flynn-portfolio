@@ -11,19 +11,16 @@ const PrivacyConsentWidget = () => {
   const savedScrollPosition = useRef(0);
   const navigate = useNavigate();
 
+  // Check for stored consent and force flag on mount
   useEffect(() => {
-    // Check if the "forceConsentModal" flag is set
-    const forceModal = localStorage.getItem("forceConsentModal");
     const stored = localStorage.getItem("privacyConsent");
-
-    if (forceModal === "true") {
-      // Remove the flag and force the modal to show
-      localStorage.removeItem("forceConsentModal");
-      setConsent(null);
-      setShowModal(true);
-    } else if (stored) {
+    const forceShow = localStorage.getItem("forceConsentModal");
+    if (stored && !forceShow) {
       setConsent(stored);
       setShowModal(false);
+    } else {
+      setShowModal(true);
+      localStorage.removeItem("forceConsentModal");
     }
   }, []);
 
@@ -47,20 +44,19 @@ const PrivacyConsentWidget = () => {
       );
       setTimeout(() => {
         setShowModal(false);
-        navigate("/"); // Return to home page
+        navigate("/"); // Return to homepage
         window.scrollTo(0, savedScrollPosition.current);
       }, 2000);
     }, 1200);
   };
 
-  // If consent exists and no forced modal flag is present, do not show the widget
   if (consent && !localStorage.getItem("forceConsentModal")) return null;
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center">
       {showModal && (
         <div className="bg-white/95 backdrop-blur-md rounded-2xl shadow-2xl p-8 max-w-3xl w-full text-gray-800 relative">
-          {/* Header: Title only */}
+          {/* Header: Title */}
           <header className="mb-6">
             <h2 className="text-2xl md:text-3xl font-bold font-heading tracking-wide">
               Privacy Consent
