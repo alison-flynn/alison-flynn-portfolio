@@ -365,7 +365,7 @@ const faqs = [
   {
     question: "How quickly did mechanics adopt it?",
     answer:
-      "Achieved 100% adoption across 12 mechanics within one week—thanks to the familiar checklist UI and zero-disruption rollout strategy."
+      "Achieved 100% adoption across all mechanics within one week—thanks to the familiar checklist UI and zero-disruption rollout strategy."
   },
   {
     question: "How did you structure sprints and demos?",
@@ -375,8 +375,7 @@ const faqs = [
   {
     question: "How did you onboard future developers & ensure maintainability?",
     answer:
-      "Authored clear Markdown docs in the repo, recorded concise walkthrough videos of key modules, and embedded JSDoc comments—enabling any engineer to dive in within minutes."
-  },
+ "I wrapped up the project with a clear, up-to-date README and concise architecture overview, named files and folders intuitively, and wrote clean, well-commented code—so that anyone can pick up the repo, understand its structure at a glance, and extend it without a steep learning curve."  },
   {
     question: "How did you implement secure authentication?",
     answer:
@@ -388,9 +387,25 @@ const faqs = [
       "Integrated jsPDF with auto-table plugins for client-side PDF exports and used SheetJS + File-Saver to generate / download Excel reports on demand."
   },
   {
-    question: "How did your custom notifications service work?",
-    answer:
-      "I wrote a Node.js API that, on job submission, inserts into a notifications table. A scheduler then dispatches in-app alerts and calendar invites at the configured times."
+    question: "How does the Part-Order Chatbot work under the hood?",
+    answer: `
+      Our Next.js API route creates a Supabase client using service-role credentials, then parses the user’s free-form question with three helpers:
+      1. **parseDate** turns “DD/MM/YYYY”, “MM/YYYY” or “YYYY” strings into JavaScript Date objects.  
+      2. **detectIntent** matches keywords (e.g. “count”, “average”, “supplier”) to classify what the user wants (list, count, total, etc.).  
+      3. **cleanQuery** strips filler words and punctuation, leaving only the core search term (like a PO number or supplier name).
+      
+      Based on the detected intent and any date, price or vehicle filters, the handler builds a Supabase query against our \`fleet_metrics_view\`, fetches the matching records, then formats a human-readable JSON answer (e.g. “On 30/06/2025, we ordered ‘Brake Pads’ (PO #123) for €250 ex VAT…”).
+    `.trim()
+  },
+  {
+    question: "How are Service Notifications generated?",
+    answer: `
+      We run a server-side helper that:
+      1. Queries \`service_info\` (with related \`job_cards→vehicles\`) for all upcoming CVRT, tax, inspection, chassis and donkey service dates.
+      2. For each record it calculates the days until due, then keeps only those within the next 7 days (or all future ones on initial run).
+      3. Deduplicates by job card & service type—always keeping the soonest date per job.
+      4. Inserts these reminders into our \`notifications\` table, where they’ll drive in-app alerts or calendar reminders.
+    `.trim()
   },
   {
     question: "How did you optimise performance at scale?",

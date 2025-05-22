@@ -125,8 +125,8 @@ const Footer = () => {
             </a>
             <p className="text-sm font-sans text-zinc-500">
               &copy; {new Date().getFullYear()}{" "}
-              <span className="text-zinc-200 font-bold ml-1">Alison Flynn</span>{" "}
-              | UX Designer
+              <span className="text-zinc-200 font-bold ml-1">Alison Flynn</span>  {" "}| UX Designer, Product Owner, Full-Stack Developer
+
             </p>
           </div>
           {/* Right: Additional Links */}

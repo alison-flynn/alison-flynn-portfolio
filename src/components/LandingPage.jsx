@@ -68,9 +68,10 @@ const LandingPage = () => {
       <main className="pt-20 container mx-auto px-6 space-y-24">
         <Hero />
         <About />
-        <Skill />
         <Work />
         <Review />
+                <Skill />
+
         <Contact />
       </main>
       <ScrollToTop />
