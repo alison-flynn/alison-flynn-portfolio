@@ -230,30 +230,32 @@ export const metrics = [
     value: 100,
     label: "Mechanic Adoption ",
     detail: "All 12 mechanics onboarded in under 7 days",
-    duration: 1.5
+    duration: 4
   },
   {
+    value: 83.3,
+    label: "Increase in Job Card Efficiency ",
+    detail: "Job Card Efficiency has increased by 83.3 due to the PWA",
+    duration: 1.5
+  },
+ 
+   {
     value: 100,
     label: "Site Coverage ",
     detail: "FleetVision rolled out across all 2 CMP sites within a week",
-    duration: 1.5
+    duration: 4
   },
   {
+    value: 66,
+    label: "Reduction in Missed Inspections ",
+    detail: "Missed CVRTs fell by 66% within the first month",
+    duration: 1.5
+  },
+ 
+   {
     value: 100,
     label: "Paper Processes Eliminated ",
     detail: "Four separate whiteboards and paper forms replaced by the PWA",
-    duration: 1.5
-  },
-  {
-    value: 70,
-    label: "Drop in Missed Inspections ",
-    detail: "Missed CVRTs fell by 70% within the first month",
-    duration: 1.5
-  },
-  {
-    value: 20,
-    label: "Reduction in Manual Follow-Ups ",
-    detail: "Follow-up inquiries dropped by 20% thanks to real-time confirmations",
     duration: 1.5
   },
   {
