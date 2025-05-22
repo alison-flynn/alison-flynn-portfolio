@@ -5,14 +5,14 @@ import ReviewCard from "./ReviewCard";
 const reviews = [
    {
     content:
-      "FleetVision has transformed my day-to-day. I simply tick off each task on my tablet—no more juggling paper forms, cover sheets, or shouting updates over WhatsApp. Damage reports and part orders appear instantly, so I get the right parts onsite without delay. It even keeps the old paper cards for audits, but everything else is live and seamless.",
+      "Fleet Vision has transformed my day-to-day. I simply tick off each task on my tablet—no more juggling paper forms, cover sheets, or relaying updates over WhatsApp. Damage reports and part orders appear instantly, so I get the right parts onsite without delay. It even keeps the old paper cards for audits, but everything else is live and seamless.",
     name: "Head of Workshop",
     imgSrc: "/images/cmp.png",
     company: "CMP Road Planing Ireland",
   },
     {
     content:
-      "FleetVision has given us end-to-end visibility across our entire operation. From automated reminders for CVRTs to real-time parts ordering via the chatbot, we’re now making data-driven decisions that cut downtime and drive efficiency. This single platform replaced disparate systems and manual handoffs—saving us time, reducing errors, and freeing up our teams to focus on growth.",
+      "Fleet Vision has given us end-to-end visibility across our entire operation. From automated reminders for CVRTs to real-time job card updates, we’re now making data-driven decisions that cut downtime and drive efficiency. This single platform replaced disparate systems and manual handoffs—saving us time, reducing errors, and freeing up our teams to focus on growth.",
     name: "Chief Operating Officer",
     imgSrc: "/images/cmp.png",
     company: "CMP Road Planing Ireland",
