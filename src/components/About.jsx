@@ -45,8 +45,9 @@ const About = () => {
         <div className="bg-zinc-800/50 p-7 rounded-2xl md:p-12 reveal-up">
           {/* About Intro */}
           <p className="text-base font-sans text-zinc-300 mb-4 md:mb-8 md:text-lg leading-relaxed max-w-[60ch]">
-            <span className="text-sm">Welcome!</span> I'm <span className="font-bold text-white">Alison Flynn</span> – a UX Designer & Technologist with a <span className="font-semibold text-white">First-Class Honours</span> degree in BSc Business Information Systems and a <span className="font-semibold text-white">Professional Diploma in UX Design</span>. Based in Cork, Ireland, I combine technical expertise with creative insight to deliver engaging, user-centred digital experiences. I specialise in user research, iterative prototyping, and usability testing, and I am passionate about collaborating on innovative projects across diverse industries.
-          </p>
+  <span className="text-sm">Hello!</span> I’m <span className="font-bold text-white">Alison Flynn</span> — a Full-Stack Developer, UX Designer & Product Owner with a First-Class Honours BSc in Business Information Systems and a Professional Diploma in UX Design. Based in Cork, I combine user-centred research, iterative prototyping, and robust React/Supabase engineering to build scalable web and mobile applications. I collaborate closely with stakeholders, run usability tests, and architect CI/CD pipelines to deliver polished, maintainable products.
+</p>
+
 
           {/* Stats Section */}
           <div className="flex flex-wrap items-center gap-4 md:gap-7">

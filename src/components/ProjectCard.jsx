@@ -23,9 +23,7 @@ const ProjectCard = ({ imgSrc, title, tags, desc, projectLink, classes }) => {
               style={{ borderRadius: "inherit" }}
             />
             <div
-              className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 backdrop-blur-sm z-10 rounded-t-2xl"
             >
-              <span className="text-white font-bold text-xl">Coming Soon</span>
             </div>
           </div>
         ) : (

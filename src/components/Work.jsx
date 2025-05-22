@@ -5,14 +5,22 @@ import ProjectCard from "./ProjectCard";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const works = [
+export const works = [
+  {
+    imgSrc: "/images/cover1.svg",
+    title: "Fleet Vision System",
+    tags: ["UX Design", "Full-Stack Development", "Agile Delivery"],
+    projectLink: "/fleetmanagementcasestudy",
+    description:
+      "End-to-end design & development of Fleet Vision PWA for CMP Ireland: digitising daily job cards, service logs, tool tracking and automated reminders. ",
+  },
   {
     imgSrc: "/images/airtravel-large-2.jpg",
     title: "Elevating Travel Booking",
     tags: ["User Research", "Wireframing", "Usability Testing"],
     projectLink: "/airlinecasestudy",
     description:
-      "A diploma project in air travel that optimised user journeys through rigorous research and wireframing.",
+      "A diploma capstone in air travel UX—optimising the booking funnel through in-depth user interviews, iterative wireframes, and moderated usability tests.",
   },
   {
     imgSrc: "/images/engineering-large-3.jpg",
@@ -20,17 +28,10 @@ const works = [
     tags: ["User Research", "Prototyping", "Usability Testing"],
     projectLink: "/engineeringcasestudy",
     description:
-      "A redesign of my uni proof-of-concept app, refining prototyping and usability to automate report generation.",
-  },
-  {
-    imgSrc: "/images/cg.svg",
-    title: "Fleet Management",
-    tags: ["User Research", "Wireframing", "Usability Testing"],
-    projectLink: "/fleetmanagementcasestudy",
-    description:
-      "An in-progress project designing an intuitive platform to digitise job cards, inspections, tools, and service logs for a 60-vehicle fleet in Ireland.",
+      "University proof-of-concept redesign, automating field report generation with data-driven prototypes and usability iterations to minimise manual entry.",
   },
 ];
+
 
 const Work = () => {
   const workRef = useRef(null);
